@@ -1,6 +1,4 @@
-w# wolkezoo_plugin
-
-wolkezoo plugin
+# wolkezoo plugin
 
 ## Getting Started
 
