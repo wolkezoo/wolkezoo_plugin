@@ -5,6 +5,8 @@ enum SystemInfoEnum {
   obtainTotalInternalMemorySize("obtain_total_internal_memory_size"),
   obtainAvailableExternalMemorySize("obtain_available_external_memory_size"),
   obtainTotalExternalMemorySize("obtain_total_external_memory_size"),
+  obtainDeviceName("obtain_device_name"),
+  isTablet("is_tablet"),
   ;
 
   const SystemInfoEnum(this.methodName);
@@ -16,6 +18,20 @@ enum SystemInfoEnum {
 /// Getting system information
 class SystemInfoTools {
   static const String _processPrefix = "SystemInfoService";
+
+  static Future<bool?> isTablet() async {
+    return await WolkezooPluginPlatform.invokeMethod<bool>(
+      methodName: "$_processPrefix-${SystemInfoEnum.isTablet.methodName}",
+    );
+  }
+
+  ///
+  /// obtain device original name
+  static Future<String?> obtainDeviceName() async {
+    return await WolkezooPluginPlatform.invokeMethod<String>(
+      methodName: "$_processPrefix-${SystemInfoEnum.obtainDeviceName.methodName}",
+    );
+  }
 
   ///
   /// obtain available internal memory size

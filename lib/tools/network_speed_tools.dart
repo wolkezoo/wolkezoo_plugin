@@ -27,7 +27,7 @@ class NetworkSpeedTools {
   /// and after this second is reached, the egress traffic listening will be turned off automatically.
   /// for example, You pass in 10, then callback will accept 10/s
   ///
-  /// When both cycles and cyclesTime are not passed, call closeNetworkSpeedListen at the appropriate time,
+  /// When both cycles and cyclesTime are not passed, you must call closeNetworkSpeedListen function at the appropriate time,
   /// otherwise OOM will occur!
   static Future<String?> openNetworkSpeedListen(
     Function(String speed) callback, {

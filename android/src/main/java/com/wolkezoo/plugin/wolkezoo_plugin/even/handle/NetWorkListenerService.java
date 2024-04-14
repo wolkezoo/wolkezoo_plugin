@@ -46,7 +46,7 @@ public class NetWorkListenerService implements EvenHandle {
         public void handleMessage(Message msg) {
             if (msg.what == 100) {
                 if (WolkezooPlugin.callBackChannel != null) {
-                    WolkezooPlugin.callBackChannel.invokeMethod("NetWorkListenerService-network_speed_callback", msg.obj.toString());
+                    WolkezooPlugin.callBackChannel.invokeMethod(evenName().concat("-network_speed_callback"), msg.obj.toString());
                 }
             }
             super.handleMessage(msg);

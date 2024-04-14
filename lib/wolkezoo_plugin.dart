@@ -12,3 +12,4 @@
 library wolkezoo_plugin;
 
 export 'tools/network_speed_tools.dart';
+export 'tools/system_info_tools.dart';
